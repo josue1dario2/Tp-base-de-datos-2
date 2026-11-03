@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="AppMagnusGamers/AppMagnusGamers.csproj" />
+  <Project Path="AppMagnusGamers/AppMagnusGamers.csproj" Id="fa456db8-daf2-4d7b-9c91-996626505d35" />
+  <Project Path="dominio/dominio.csproj" Id="40d6fb36-5b2f-4019-b41a-a5e88305c1cb" />
+  <Project Path="servicio/servicio.csproj" Id="bb63ee92-3903-4c30-9c1b-03f957590697" />
 </Solution>

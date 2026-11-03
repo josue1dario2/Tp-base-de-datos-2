@@ -1,0 +1,6 @@
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\bin\Debug\dominio.dll
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\bin\Debug\dominio.pdb
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.dll
+c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.pdb

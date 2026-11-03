@@ -1,44 +1,50 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AppMagnusGamers._Default" %>
+<%@ Page Title="Catálogo - Magnus Gamers" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Default.aspx.cs" Inherits="AppMagnusGamers._Default" ResponseEncoding="utf-8" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+        <main class="py-4">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h1 class="display-5 fw-bold text-primary">Cat&aacute;logo Magnus Gamers</h1>
+                    <p class="lead text-muted">Listado de art&iacute;culos.</p>
+                </div>
+            </div>
 
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
+            <asp:Label ID="lblError" runat="server" CssClass="alert alert-danger d-block mb-4" Visible="false">
+            </asp:Label>
 
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
-    </main>
-
-</asp:Content>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <asp:Repeater ID="repArticulos" runat="server">
+                    <ItemTemplate>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-secondary">#<%# Eval("IdArticulo") %></span>
+                                        <div>
+                                            <span class="badge bg-info text-dark">
+                                                <%# Eval("Categoria.Nombre") %>
+                                            </span>
+                                            <span class="badge bg-dark">
+                                                <%# Eval("Marca.Nombre") %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title text-dark fw-bold mb-2">
+                                        <%# Eval("Nombre") %>
+                                    </h5>
+                                    <p class="card-text text-muted flex-grow-1">
+                                        <%# Eval("Descripcion") %>
+                                    </p>
+                                    <div class="mt-3 pt-2 border-top d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">Activo</span>
+                                        <a href="#" class="btn btn-outline-primary btn-sm">Ver Detalle</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </main>
+    </asp:Content>

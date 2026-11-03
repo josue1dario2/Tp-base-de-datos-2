@@ -91,9 +91,9 @@ INSERT INTO DetallePresupuesto (ID_Presupuesto, ID_ItemFisico, PrecioFinal) VALU
 GO
 
 INSERT INTO Remito (NroRemito, ID_Presupuesto, Fecha, Estado, Envio, CostoEnvio) VALUES
-('REM-0001', 2, '2026-03-05', 'entregado', 0, 0),
-('REM-0002', 4, '2026-03-15', 'entregado', 1, 12000),
-('REM-0003', 1, '2026-03-11', 'pendiente', 1, 15000);
+('REM-0001', 2, '2026-03-05', 'Entregado', 0, 0),
+('REM-0002', 4, '2026-03-15', 'Entregado', 1, 12000),
+('REM-0003', 1, '2026-03-11', 'Pendiente', 1, 15000);
 GO
 
 INSERT INTO DetalleRemito (ID_Remito, ID_ItemFisico, PrecioFinal) VALUES
@@ -105,10 +105,10 @@ INSERT INTO DetalleRemito (ID_Remito, ID_ItemFisico, PrecioFinal) VALUES
 GO
 
 INSERT INTO AuditoriaItemFisico (ID_ItemFisico, Operacion, EstadoAnterior, EstadoNuevo, Observacion) VALUES
-(7, 'VENTA', 'reservado', 'vendido', N'Venta cargada como dato inicial.'),
-(10, 'VENTA', 'reservado', 'vendido', N'Venta cargada como dato inicial.'),
-(11, 'VENTA', 'disponible', 'vendido', N'Venta mediante presupuesto PRES-0004.'),
-(12, 'VENTA', 'disponible', 'vendido', N'Venta mediante presupuesto PRES-0004.'),
-(14, 'VENTA', 'disponible', 'vendido', N'Venta por mostrador.'),
-(8, 'MODIFICACION', 'disponible', 'service', N'Enviado a soporte técnico por fallas en teclas.');
+(7, 'Venta', 'reservado', 'vendido', N'Venta cargada como dato inicial.'),
+(10, 'Venta', 'reservado', 'vendido', N'Venta cargada como dato inicial.'),
+(11, 'Venta', 'disponible', 'vendido', N'Venta mediante presupuesto PRES-0004.'),
+(12, 'Venta', 'disponible', 'vendido', N'Venta mediante presupuesto PRES-0004.'),
+(14, 'Venta', 'disponible', 'vendido', N'Venta por mostrador.'),
+(8, 'Modificacion', 'disponible', 'service', N'Enviado a soporte técnico por fallas en teclas.');
 GO

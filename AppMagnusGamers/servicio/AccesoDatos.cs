@@ -78,6 +78,20 @@ namespace servicio
             }
         }
 
+        public object ejecutarAccionScalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                return comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void cerrarConexion()
         {
             if (lector != null && !lector.IsClosed)
@@ -87,6 +101,74 @@ namespace servicio
             if (conexion != null && conexion.State == ConnectionState.Open)
             {
                 conexion.Close();
+            }
+        }
+
+        public static void AsegurarProcedimientos()
+        {
+            string[] scripts = new string[]
+            {
+                @"CREATE OR ALTER PROCEDURE dbo.SP_ListarMarcas
+                  AS
+                  BEGIN
+                      SET NOCOUNT ON;
+                      SELECT ID_Marca, Nombre FROM Marca WHERE Activo = 1 ORDER BY Nombre ASC;
+                  END;",
+
+                @"CREATE OR ALTER PROCEDURE dbo.SP_ListarCategorias
+                  AS
+                  BEGIN
+                      SET NOCOUNT ON;
+                      SELECT ID_Categoria, Nombre FROM Categoria WHERE Activo = 1 ORDER BY Nombre ASC;
+                  END;",
+
+                @"CREATE OR ALTER PROCEDURE dbo.SP_InsertarMarca
+                      @Nombre NVARCHAR(50)
+                  AS
+                  BEGIN
+                      SET NOCOUNT ON;
+                      INSERT INTO Marca (Nombre, Activo) VALUES (@Nombre, 1);
+                      SELECT SCOPE_IDENTITY() AS NuevoID;
+                  END;",
+
+                @"CREATE OR ALTER PROCEDURE dbo.SP_InsertarCategoria
+                      @Nombre NVARCHAR(50)
+                  AS
+                  BEGIN
+                      SET NOCOUNT ON;
+                      INSERT INTO Categoria (Nombre, Activo) VALUES (@Nombre, 1);
+                      SELECT SCOPE_IDENTITY() AS NuevoID;
+                  END;",
+
+                @"CREATE OR ALTER PROCEDURE dbo.SP_InsertarArticulo
+                      @Nombre NVARCHAR(100),
+                      @Descripcion NVARCHAR(500),
+                      @ID_Marca BIGINT,
+                      @ID_Categoria BIGINT
+                  AS
+                  BEGIN
+                      SET NOCOUNT ON;
+                      INSERT INTO Articulo (Nombre, Descripcion, ID_Marca, ID_Categoria, Activo)
+                      VALUES (@Nombre, @Descripcion, @ID_Marca, @ID_Categoria, 1);
+                      SELECT SCOPE_IDENTITY() AS NuevoID;
+                  END;"
+            };
+
+            foreach (var script in scripts)
+            {
+                AccesoDatos datos = new AccesoDatos();
+                try
+                {
+                    datos.setearConsulta(script);
+                    datos.ejecutarAccion();
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
             }
         }
     }

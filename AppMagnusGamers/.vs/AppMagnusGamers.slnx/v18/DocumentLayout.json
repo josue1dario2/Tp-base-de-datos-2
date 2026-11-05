@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +34,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\Josue\\Documents\\base de datos 2\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Master",
+              "RelativeDocumentMoniker": "AppMagnusGamers\\Site.Master",
+              "ToolTip": "C:\\Users\\Josue\\Documents\\base de datos 2\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Master",
+              "RelativeToolTip": "AppMagnusGamers\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-05T03:30:49.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Site.Mobile.Master",
               "DocumentMoniker": "C:\\Users\\Josue\\Documents\\base de datos 2\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Mobile.Master",
@@ -42,7 +55,7 @@
               "RelativeToolTip": "AppMagnusGamers\\Site.Mobile.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-03T00:15:10.949Z"
+              "WhenOpened": "2026-11-05T03:30:49.872Z"
             },
             {
               "$type": "Document",
@@ -54,20 +67,7 @@
               "RelativeToolTip": "AppMagnusGamers\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-03T00:15:01.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\Josue\\Documents\\base de datos 2\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Master",
-              "RelativeDocumentMoniker": "AppMagnusGamers\\Site.Master",
-              "ToolTip": "C:\\Users\\Josue\\Documents\\base de datos 2\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Master",
-              "RelativeToolTip": "AppMagnusGamers\\Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-03T00:13:40.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-05T03:30:49.873Z"
             }
           ]
         }

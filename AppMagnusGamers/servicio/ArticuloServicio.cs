@@ -27,6 +27,7 @@ namespace servicio
 
                     art.Activo = (bool)datos.Lector["Activo"];
 
+                    // Mapeo del objeto Marca
                     art.IdMarca = (long)datos.Lector["ID_Marca"];
                     art.Marca = new Marca
                     {
@@ -34,6 +35,7 @@ namespace servicio
                         Nombre = (string)datos.Lector["MarcaNombre"]
                     };
 
+                    // Mapeo del objeto Categoria
                     art.IdCategoria = (long)datos.Lector["ID_Categoria"];
                     art.Categoria = new Categoria
                     {
@@ -45,6 +47,30 @@ namespace servicio
                 }
 
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public long Agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("SP_InsertarArticulo");
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", (object)nuevo.Descripcion ?? DBNull.Value);
+                datos.setearParametro("@ID_Marca", nuevo.IdMarca);
+                datos.setearParametro("@ID_Categoria", nuevo.IdCategoria);
+
+                object resultado = datos.ejecutarAccionScalar();
+                return Convert.ToInt64(resultado);
             }
             catch (Exception ex)
             {

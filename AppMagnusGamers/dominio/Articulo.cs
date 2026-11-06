@@ -5,7 +5,11 @@ namespace dominio
     public class Articulo
     {
         public long IdArticulo { get; set; }
+        
+        // Hasta 100, es único
         public string Nombre { get; set; }
+
+        // hasta 500
         public string Descripcion { get; set; }
         public long IdMarca { get; set; }
         public Marca Marca { get; set; }

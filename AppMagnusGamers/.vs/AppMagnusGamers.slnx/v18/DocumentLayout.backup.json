@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|c:\\users\\demian\\desktop\\tp-base-de-datos-2\\appmagnusgamers\\appmagnusgamers\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{BB63EE92-3903-4C30-9C1B-03F957590697}|servicio\\servicio.csproj|c:\\users\\demian\\desktop\\tp-base-de-datos-2\\appmagnusgamers\\servicio\\itemfisicoservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB63EE92-3903-4C30-9C1B-03F957590697}|servicio\\servicio.csproj|solutionrelative:servicio\\itemfisicoservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\appmagnusgamers\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|solutionrelative:appmagnusgamers\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\appmagnusgamers\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|solutionrelative:appmagnusgamers\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\appmagnusgamers\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|solutionrelative:appmagnusgamers\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\appmagnusgamers\\site.mobile.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|solutionrelative:appmagnusgamers\\site.mobile.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\appmagnusgamers\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{FA456DB8-DAF2-4D7B-9C91-996626505D35}|AppMagnusGamers\\AppMagnusGamers.csproj|solutionrelative:appmagnusgamers\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,6 +35,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ItemFisicoServicio.cs",
+              "DocumentMoniker": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\servicio\\ItemFisicoServicio.cs",
+              "RelativeDocumentMoniker": "servicio\\ItemFisicoServicio.cs",
+              "ToolTip": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\servicio\\ItemFisicoServicio.cs",
+              "RelativeToolTip": "servicio\\ItemFisicoServicio.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T19:36:19.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "AppMagnusGamers\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Default.aspx.cs",
+              "RelativeToolTip": "AppMagnusGamers\\Default.aspx.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA0wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T19:35:44.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Site.Master",
               "DocumentMoniker": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Master",
               "RelativeDocumentMoniker": "AppMagnusGamers\\Site.Master",
@@ -34,12 +67,11 @@
               "RelativeToolTip": "AppMagnusGamers\\Site.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-05T03:30:49.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-05T03:30:49.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Site.Mobile.Master",
               "DocumentMoniker": "C:\\Users\\demian\\Desktop\\Tp-base-de-datos-2\\AppMagnusGamers\\AppMagnusGamers\\Site.Mobile.Master",
               "RelativeDocumentMoniker": "AppMagnusGamers\\Site.Mobile.Master",

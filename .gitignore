@@ -1,0 +1,8 @@
+# Visual Studio e indexación
+.vs/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates

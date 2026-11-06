@@ -1,3 +1,7 @@
+USE MagnusGamers_DB
+
+GO
+
 -- VISTA DE LISTA TODOS LOS ITEMS, SOLO LOS NO VENDIDOS
 CREATE VIEW Listado_Items_NoVendidos AS
 SELECT ID_ItemFisico, ID_Articulo, Codigo, Detalles, EtiquetaLogistica,Condicion,PrecioVenta,PrecioCompra,Activo,FechaAlta

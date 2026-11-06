@@ -27,7 +27,6 @@ namespace servicio
 
                     art.Activo = (bool)datos.Lector["Activo"];
 
-                    // Mapeo del objeto Marca
                     art.IdMarca = (long)datos.Lector["ID_Marca"];
                     art.Marca = new Marca
                     {
@@ -35,7 +34,6 @@ namespace servicio
                         Nombre = (string)datos.Lector["MarcaNombre"]
                     };
 
-                    // Mapeo del objeto Categoria
                     art.IdCategoria = (long)datos.Lector["ID_Categoria"];
                     art.Categoria = new Categoria
                     {

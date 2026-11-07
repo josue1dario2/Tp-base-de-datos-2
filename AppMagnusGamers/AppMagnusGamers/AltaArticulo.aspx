@@ -4,7 +4,6 @@
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <main class="py-4">
-            <!-- Encabezado en estilo idéntico a Default.aspx -->
             <div class="row mb-4">
                 <div class="col-12 text-center">
                     <h1 class="display-5 fw-bold text-primary">Agregar Art&iacute;culo</h1>
@@ -16,14 +15,11 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
 
-                    <!-- Card estilo Default.aspx: fondo limpio, sombra suave y sin bordes toscos -->
                     <div class="card shadow-sm border-0">
                         <div class="card-body p-4">
-                            <!-- Alertas de éxito / error -->
                             <asp:Label ID="lblMensaje" runat="server" Visible="false" CssClass="d-block mb-3">
                             </asp:Label>
 
-                            <!-- Nombre -->
                             <div class="mb-3">
                                 <label for="txtNombre" class="form-label fw-semibold text-secondary">Nombre del
                                     Art&iacute;culo</label>
@@ -31,7 +27,6 @@
                                     placeholder="Ej: PlayStation 5 Slim" required="required"></asp:TextBox>
                             </div>
 
-                            <!-- Descripción -->
                             <div class="mb-3">
                                 <label for="txtDescripcion"
                                     class="form-label fw-semibold text-secondary">Descripci&oacute;n</label>
@@ -40,7 +35,6 @@
                                 </asp:TextBox>
                             </div>
 
-                            <!-- Marca con botón [+] para Modal -->
                             <div class="mb-3">
                                 <label for="ddlMarca" class="form-label fw-semibold text-secondary">Marca</label>
                                 <div class="input-group">
@@ -54,7 +48,6 @@
                                 </div>
                             </div>
 
-                            <!-- Categoría con botón [+] para Modal -->
                             <div class="mb-4">
                                 <label for="ddlCategoria"
                                     class="form-label fw-semibold text-secondary">Categor&iacute;a</label>
@@ -69,7 +62,62 @@
                                 </div>
                             </div>
 
-                            <!-- Botones de Acción -->
+
+                            <div class="card border border-primary-subtle bg-light mb-4 shadow-sm">
+                                <div class="card-body p-3">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <h6 class="fw-bold text-primary mb-0">
+                                            Stock Inicial
+                                        </h6>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="txtCodigoItem"
+                                            class="form-label fw-semibold text-secondary small">C&oacute;digo de
+                                            Stock</label>
+                                        <asp:TextBox ID="txtCodigoItem" runat="server" CssClass="form-control"
+                                            placeholder="Ej: PS5-001, SWITCH-001" required="required"></asp:TextBox>
+                                    </div>
+
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-12 col-sm-6">
+                                            <label for="ddlCondicionItem"
+                                                class="form-label fw-semibold text-secondary small">Condici&oacute;n</label>
+                                            <asp:DropDownList ID="ddlCondicionItem" runat="server"
+                                                CssClass="form-select">
+                                                <asp:ListItem Text="Nuevo" Value="nuevo" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Seminuevo" Value="seminuevo"></asp:ListItem>
+                                                <asp:ListItem Text="Usado" Value="usado"></asp:ListItem>
+                                                <asp:ListItem Text="Reacondicionado" Value="reacondicionado">
+                                                </asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <label for="txtPrecioVenta"
+                                                class="form-label fw-semibold text-secondary small">Precio de Venta
+                                                ($)</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <asp:TextBox ID="txtPrecioVenta" runat="server" CssClass="form-control"
+                                                    type="number" step="0.01" min="0" placeholder="Ej: 760000"
+                                                    required="required"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-0">
+                                        <label for="txtDetallesItem"
+                                            class="form-label fw-semibold text-secondary small">Detalles de la Unidad
+                                            (Opcional)</label>
+                                        <asp:TextBox ID="txtDetallesItem" runat="server"
+                                            CssClass="form-control form-control-sm"
+                                            placeholder="Ej: Caja cerrada con sellos originales y garantía oficial.">
+                                        </asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="d-grid gap-2">
                                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar Artículo"
                                     CssClass="btn btn-primary btn-lg fw-bold" OnClick="btnGuardar_Click" />
@@ -82,9 +130,6 @@
             </div>
         </main>
 
-        <!-- ========================================== -->
-        <!-- Modal: Nueva Marca                         -->
-        <!-- ========================================== -->
         <div class="modal fade" id="modalNuevaMarca" tabindex="-1" aria-labelledby="modalNuevaMarcaLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -110,9 +155,6 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- Modal: Nueva Categoría                     -->
-        <!-- ========================================== -->
         <div class="modal fade" id="modalNuevaCategoria" tabindex="-1" aria-labelledby="modalNuevaCategoriaLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -141,13 +183,9 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- Lógica JavaScript / Fetch API para Modales -->
-        <!-- ========================================== -->
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", function () {
 
-                // Función auxiliar para traducir errores de base de datos a mensajes amigables
                 function formatearError(tipo, msg, nombre) {
                     if (!msg) return `No se pudo registrar la ${tipo}.`;
                     if (msg.includes("UNIQUE KEY") || msg.includes("clave duplicada") || msg.includes("2627") || msg.includes("2601")) {
@@ -156,7 +194,6 @@
                     return msg.replace(/^Error:\s*/i, "");
                 }
 
-                // --- Guardar Marca vía AJAX WebMethod ---
                 const btnGuardarMarca = document.getElementById("btnGuardarMarca");
                 const txtNuevaMarca = document.getElementById("txtNuevaMarca");
                 const errorMarca = document.getElementById("errorMarca");
@@ -219,7 +256,6 @@
                         });
                 });
 
-                // --- Guardar Categoría vía AJAX WebMethod ---
                 const btnGuardarCategoria = document.getElementById("btnGuardarCategoria");
                 const txtNuevaCategoria = document.getElementById("txtNuevaCategoria");
                 const errorCategoria = document.getElementById("errorCategoria");

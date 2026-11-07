@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AltaArticulo.aspx" />
+    <Content Include="Articulos.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -200,6 +201,13 @@
     <Compile Include="AltaArticulo.aspx.designer.cs">
       <DependentUpon>AltaArticulo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Articulos.aspx.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulos.aspx.designer.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -274,6 +282,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>SpecificPage</StartAction>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58848</DevelopmentServerPort>

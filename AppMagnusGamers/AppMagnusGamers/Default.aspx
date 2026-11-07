@@ -6,8 +6,8 @@
             <div class="row mb-4">
                 <div class="col-12 text-center">
                     <h1 class="display-5 fw-bold text-primary">Cat&aacute;logo</h1>
-                    <p class="lead text-muted">Explor&aacute; todas las unidades disponibles con precio,
-                        condici&oacute;n y stock en tiempo real.</p>
+                    <p class="lead text-muted">Explor&aacute; todos los artículos con stock consolidado y precios en
+                        tiempo real.</p>
                 </div>
             </div>
 
@@ -18,19 +18,22 @@
                 <div class="card-body p-3 p-md-4">
                     <div class="row g-2 mb-4">
                         <div class="col-12">
-                            <div class="input-group shadow buscador-principal w-100 d-flex flex-nowrap align-items-stretch">
-                                <span class="input-group-text bg-white border-0 text-primary ps-4 pe-2 d-flex align-items-center">
+                            <div
+                                class="input-group shadow buscador-principal w-100 d-flex flex-nowrap align-items-stretch">
+                                <span
+                                    class="input-group-text bg-white border-0 text-primary ps-4 pe-2 d-flex align-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                         viewBox="0 0 16 16">
                                         <path
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                     </svg>
                                 </span>
-                                <input type="text" id="txtBuscar" class="form-control form-control-lg fs-5 py-3 border-0 ps-2 flex-grow-1 w-100"
-                                    placeholder="Buscar por artículo, código o descripción..."
-                                    autocomplete="off" />
-                                <button class="btn btn-link border-0 text-secondary pe-4 ps-2 d-none fs-3 text-decoration-none" type="button"
-                                    id="btnLimpiarTexto" title="Borrar búsqueda">
+                                <input type="text" id="txtBuscar"
+                                    class="form-control form-control-lg fs-5 py-3 border-0 ps-2 flex-grow-1 w-100"
+                                    placeholder="Buscar por artículo, marca o descripción..." autocomplete="off" />
+                                <button
+                                    class="btn btn-link border-0 text-secondary pe-4 ps-2 d-none fs-3 text-decoration-none"
+                                    type="button" id="btnLimpiarTexto" title="Borrar búsqueda">
                                     &times;
                                 </button>
                             </div>
@@ -133,8 +136,8 @@
                 <div class="d-flex align-items-center">
                     <span id="lblContador" class="badge bg-secondary fs-6 fw-normal px-3 py-2">
                         Mostrando <strong id="numTotalItems">
-                            <%= ListaItems.Count %>
-                        </strong> unidades f&iacute;sicas
+                        <%= TotalArticulos %>
+                            </strong> artículos en cat&aacute;logo
                     </span>
                     <div id="spinnerCargando" class="spinner-border spinner-border-sm text-primary ms-3 d-none"
                         role="status">
@@ -151,55 +154,40 @@
                             <div class="card h-100 shadow-sm border-0 transition-card">
                                 <div class="card-body d-flex flex-column">
                                     <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <span class="badge bg-dark font-monospace">
-                                            <%# Eval("Codigo") %>
-                                        </span>
-                                        <div>
-                                            <span class="badge bg-info text-dark">
-                                                <%# Eval("Articulo.Categoria.Nombre") %>
-                                            </span>
-                                            <span class="badge bg-secondary">
-                                                <%# Eval("Articulo.Marca.Nombre") %>
-                                            </span>
-                                        </div>
+                                                <span class="badge bg-info text-dark">
+                                                    <%# Eval("CategoriaNombre") %>
+                                                </span>
+                                                <span class="badge bg-secondary">
+                                                    <%# Eval("MarcaNombre") %>
+                                                </span>
                                     </div>
 
                                     <h5 class="card-title text-dark fw-bold mb-1">
-                                        <%# Eval("Articulo.Nombre") %>
+                                            <%# Eval("Nombre") %>
                                     </h5>
 
                                     <div class="mb-2">
-                                        <span
-                                            class='badge text-uppercase <%# ObtenerClaseCondicion(Eval("Condicion")) %>'>
-                                            <%# Eval("Condicion") %>
-                                        </span>
+                                        <%# ObtenerBadgeStock(Eval("StockDisponible")) %>
                                     </div>
 
                                     <p class="card-text text-muted small mb-2">
-                                        <%# Eval("Articulo.Descripcion") %>
+                                            <%# Eval("Descripcion") %>
                                     </p>
 
-                                    <%# ObtenerDetallesHtml(Eval("Detalles")) %>
-
-                                        <div class="mt-auto pt-2 border-top">
-                                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                                <div>
-                                                    <small class="text-muted d-block">Precio de Venta</small>
-                                                    <span class="fs-4 fw-bold text-success">
-                                                        <%# FormatearPrecio(Eval("PrecioVenta")) %>
-                                                    </span>
+                                                <div class="mt-auto pt-2 border-top">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <small class="text-muted d-block">Precio de
+                                                                Referencia</small>
+                                                            <span class="fs-4 fw-bold text-success">
+                                                                <%# FormatearPrecio(Eval("PrecioVenta")) %>
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <%# ObtenerBadgeLogistica(Eval("EtiquetaLogistica")) %>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end">
-                                                <a href="#" class="btn btn-outline-primary btn-sm w-100">Ver Unidad</a>
                                             </div>
                                         </div>
                                 </div>
-                            </div>
-                        </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
@@ -212,7 +200,7 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </div>
-                <h4 class="fw-bold text-secondary">No se encontraron unidades f&iacute;sicas</h4>
+                <h4 class="fw-bold text-secondary">No se encontraron artículos en cat&aacute;logo</h4>
                 <p class="text-muted">Prob&aacute; cambiando las palabras clave, ampliando el rango de precios o
                     quitando los filtros aplicados.</p>
                 <button type="button" class="btn btn-primary btn-sm px-4 mt-2" onclick="limpiarTodosLosFiltros()">
@@ -371,44 +359,26 @@
                     estadoVacio.classList.add("d-none");
 
                     const html = items.map(item => {
-                        const precioHtml = formateadorMoneda.format(item.precioVenta);
+                        const precioHtml = item.precioFormateado || (item.precioVenta > 0 ? formateadorMoneda.format(item.precioVenta) : "Consultar");
 
-                        const condLower = (item.condicion || "").toLowerCase();
-                        let condBadgeClass = "bg-warning text-dark";
-                        if (condLower === "nuevo") condBadgeClass = "bg-primary";
-                        else if (condLower === "seminuevo") condBadgeClass = "bg-success";
+                            let stockBadge = `<span class="badge bg-secondary-subtle text-muted border px-2 py-1">Sin stock disponible</span>`;
+                            if (item.stock > 1) {
+                                stockBadge = `<span class="badge bg-success-subtle text-success border border-success fw-semibold px-2 py-1"><i class="bi bi-box-seam me-1"></i>${item.stock} unidades disponibles</span>`;
+                            } else if (item.stock === 1) {
+                                stockBadge = `<span class="badge bg-success-subtle text-success border border-success fw-semibold px-2 py-1"><i class="bi bi-box-seam me-1"></i>1 unidad disponible</span>`;
+                            }
 
-                        const logLower = (item.etiquetaLogistica || "").toLowerCase();
-                        let logisticaBadge = `<span class="badge bg-light text-muted border">${escaparHtml(item.etiquetaLogistica)}</span>`;
-                        if (logLower === "disponible") {
-                            logisticaBadge = `<span class="badge bg-success-subtle text-success border border-success">Disponible</span>`;
-                        } else if (logLower === "reservado") {
-                            logisticaBadge = `<span class="badge bg-warning-subtle text-warning border border-warning">Reservado</span>`;
-                        } else if (logLower === "vendido") {
-                            logisticaBadge = `<span class="badge bg-danger text-white">Vendido</span>`;
-                        }
+                            const descHtml = item.descripcion
+                                ? `<p class="card-text text-muted small mb-2">${escaparHtml(item.descripcion)}</p>`
+                                : "";
 
-                        const descHtml = item.descripcion
-                            ? `<p class="card-text text-muted small mb-2">${escaparHtml(item.descripcion)}</p>`
-                            : "";
-
-                        const detallesHtml = item.detalles
-                            ? `<div class="alert alert-light border py-1 px-2 small mb-2 text-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle me-1" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-                            ${escaparHtml(item.detalles)}
-                           </div>`
-                            : "";
-
-                        return `
+                            return `
                         <div class="col item-card">
                             <div class="card h-100 shadow-sm border-0 transition-card">
                                 <div class="card-body d-flex flex-column">
                                     <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <span class="badge bg-dark font-monospace">${escaparHtml(item.codigo)}</span>
-                                        <div>
-                                            <span class="badge bg-info text-dark me-1">${escaparHtml(item.categoria)}</span>
-                                            <span class="badge bg-secondary">${escaparHtml(item.marca)}</span>
-                                        </div>
+                                        <span class="badge bg-info text-dark">${escaparHtml(item.categoria)}</span>
+                                        <span class="badge bg-secondary">${escaparHtml(item.marca)}</span>
                                     </div>
 
                                     <h5 class="card-title text-dark fw-bold mb-1">
@@ -416,33 +386,24 @@
                                     </h5>
 
                                     <div class="mb-2">
-                                        <span class="badge ${condBadgeClass} text-uppercase">
-                                            ${escaparHtml(item.condicion)}
-                                        </span>
+                                        ${stockBadge}
                                     </div>
 
                                     ${descHtml}
-                                    ${detallesHtml}
 
                                     <div class="mt-auto pt-2 border-top">
                                         <div class="d-flex justify-content-between align-items-center mb-2">
                                             <div>
-                                                <small class="text-muted d-block">Precio de Venta</small>
+                                                <small class="text-muted d-block">Precio de Referencia</small>
                                                 <span class="fs-4 fw-bold text-success">${precioHtml}</span>
                                             </div>
-                                            <div>
-                                                ${logisticaBadge}
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end">
-                                            <a href="#" class="btn btn-outline-primary btn-sm w-100">Ver Unidad</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     `;
-                    }).join("");
+                        }).join("");
 
                     contenedorItems.innerHTML = html;
                 }

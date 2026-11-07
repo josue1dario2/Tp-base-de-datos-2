@@ -83,6 +83,33 @@ namespace servicio
                 datos.cerrarConexion();
             }
         }
+
+        public long Agregar(ItemFisico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("SP_InsertarItemFisico");
+                datos.setearParametro("@ID_Articulo", nuevo.IdArticulo);
+                datos.setearParametro("@Codigo", nuevo.Codigo.Trim());
+                datos.setearParametro("@Detalles", string.IsNullOrWhiteSpace(nuevo.Detalles) ? (object)DBNull.Value : nuevo.Detalles.Trim());
+                datos.setearParametro("@EtiquetaLogistica", string.IsNullOrWhiteSpace(nuevo.EtiquetaLogistica) ? "disponible" : nuevo.EtiquetaLogistica);
+                datos.setearParametro("@Condicion", nuevo.Condicion);
+                datos.setearParametro("@PrecioVenta", nuevo.PrecioVenta);
+                datos.setearParametro("@PrecioCompra", nuevo.PrecioCompra.HasValue ? (object)nuevo.PrecioCompra.Value : DBNull.Value);
+
+                object resultado = datos.ejecutarAccionScalar();
+                return Convert.ToInt64(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
 

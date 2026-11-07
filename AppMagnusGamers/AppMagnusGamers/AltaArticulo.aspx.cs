@@ -17,25 +17,9 @@ namespace AppMagnusGamers
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                try
-                {
-                    CargarDesplegables();
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        AccesoDatos.AsegurarProcedimientos();
-                        CargarDesplegables();
-                    }
-                    catch (Exception ex2)
-                    {
-                        MostrarMensaje("Error al conectar con la base de datos: " + ex2.Message, false);
-                    }
-                }
-            }
+            Response.Redirect("~/Articulos", false);
+            Context.ApplicationInstance.CompleteRequest();
+            return;
         }
 
         private void CargarDesplegables()
@@ -80,7 +64,26 @@ namespace AppMagnusGamers
                     return;
                 }
 
-                Articulo nuevo = new Articulo
+                if (string.IsNullOrWhiteSpace(txtCodigoItem.Text))
+                {
+                    MostrarMensaje("Debe ingresar un código para la unidad de stock (ej: PS5-001).", false);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPrecioVenta.Text) ||
+                    (!decimal.TryParse(txtPrecioVenta.Text.Trim(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal precioVenta) &&
+                     !decimal.TryParse(txtPrecioVenta.Text.Trim(), out precioVenta)) ||
+                    precioVenta < 0)
+                {
+                    MostrarMensaje("Debe ingresar un precio de venta válido mayor o igual a 0.", false);
+                    return;
+                }
+
+                string condicion = ddlCondicionItem.SelectedValue;
+                if (string.IsNullOrWhiteSpace(condicion))
+                    condicion = "nuevo";
+
+                Articulo nuevoArticulo = new Articulo
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Descripcion = string.IsNullOrWhiteSpace(txtDescripcion.Text) ? null : txtDescripcion.Text.Trim(),
@@ -89,18 +92,43 @@ namespace AppMagnusGamers
                     Activo = true
                 };
 
-                long nuevoId = articuloServicio.Agregar(nuevo);
+                long nuevoIdArticulo = articuloServicio.Agregar(nuevoArticulo);
 
-                MostrarMensaje($"¡Artículo '{nuevo.Nombre}' registrado exitosamente con ID #{nuevoId}!", true);
+                ItemFisico nuevoItem = new ItemFisico
+                {
+                    IdArticulo = nuevoIdArticulo,
+                    Codigo = txtCodigoItem.Text.Trim(),
+                    Condicion = condicion,
+                    PrecioVenta = precioVenta,
+                    Detalles = string.IsNullOrWhiteSpace(txtDetallesItem.Text) ? null : txtDetallesItem.Text.Trim(),
+                    EtiquetaLogistica = "disponible",
+                    Activo = true
+                };
+
+                ItemFisicoServicio itemService = new ItemFisicoServicio();
+                long nuevoIdItem = itemService.Agregar(nuevoItem);
+
+                MostrarMensaje($"¡Artículo '{nuevoArticulo.Nombre}' registrado exitosamente con unidad física #{nuevoItem.Codigo} (${nuevoItem.PrecioVenta:N0})! Ya podés verlo en el catálogo.", true);
                 LimpiarFormulario();
             }
             catch (SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
             {
-                MostrarMensaje($"Ya existe un artículo llamado '{txtNombre.Text.Trim()}' con la misma marca y categoría seleccionadas.", false);
+                if (ex.Message.Contains("UQ_Articulo") || ex.Message.Contains("Articulo"))
+                {
+                    MostrarMensaje($"Ya existe un artículo llamado '{txtNombre.Text.Trim()}' con la misma marca y categoría seleccionadas.", false);
+                }
+                else if (ex.Message.Contains("Codigo") || ex.Message.Contains("ItemFisico"))
+                {
+                    MostrarMensaje($"El código de unidad física '{txtCodigoItem.Text.Trim()}' ya existe en el sistema. Por favor elija un código único.", false);
+                }
+                else
+                {
+                    MostrarMensaje("Ya existe un registro con esos datos únicos en el sistema.", false);
+                }
             }
             catch (Exception ex)
             {
-                MostrarMensaje("Ocurrió un error al guardar el artículo: " + ex.Message, false);
+                MostrarMensaje("Ocurrió un error al guardar: " + ex.Message, false);
             }
         }
 
@@ -110,6 +138,10 @@ namespace AppMagnusGamers
             txtDescripcion.Text = string.Empty;
             ddlMarca.SelectedIndex = 0;
             ddlCategoria.SelectedIndex = 0;
+            txtCodigoItem.Text = string.Empty;
+            txtPrecioVenta.Text = string.Empty;
+            txtDetallesItem.Text = string.Empty;
+            ddlCondicionItem.SelectedIndex = 0;
         }
 
         private void MostrarMensaje(string texto, bool esExito)
@@ -119,9 +151,6 @@ namespace AppMagnusGamers
             lblMensaje.Visible = true;
         }
 
-        // ========================================================
-        // WebMethods para responder a peticiones AJAX desde Modales
-        // ========================================================
         [WebMethod]
         public static object AgregarMarcaAjax(string nombre)
         {

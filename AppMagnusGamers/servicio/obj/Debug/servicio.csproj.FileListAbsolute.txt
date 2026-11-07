@@ -7,3 +7,12 @@ c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\serv
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.csproj.Up2Date
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.dll
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.pdb
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\bin\Debug\servicio.dll
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\bin\Debug\servicio.pdb
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\bin\Debug\dominio.dll
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\bin\Debug\dominio.pdb
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.csproj.AssemblyReference.cache
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.csproj.CoreCompileInputs.cache
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.csproj.Up2Date
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.dll
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\servicio\obj\Debug\servicio.pdb

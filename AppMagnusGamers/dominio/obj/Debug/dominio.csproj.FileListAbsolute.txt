@@ -4,3 +4,9 @@ c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\domi
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\bin\Debug\dominio.pdb
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.dll
 c:\Users\Josue\Documents\base de datos 2\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.pdb
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\bin\Debug\dominio.dll
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\bin\Debug\dominio.pdb
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.dll
+C:\Users\demian\Desktop\Tp-base-de-datos-2\AppMagnusGamers\dominio\obj\Debug\dominio.pdb
